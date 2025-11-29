@@ -39,9 +39,9 @@ app.MapGet("/api/zoo/getDailyCost", async (IZooService zooService, ILogger<Progr
     logger.LogInformation("GET /api/zoo/getDailyCost - Request started");
     try
     {
-        var totalCost = await zooService.GetTotalMonthlyCostAsync();
+        var totalCost = await zooService.GetTotalDailyCostAsync();
         logger.LogInformation("GET /api/zoo/getDailyCost - Request completed successfully. Total monthly cost: {totalCost}", totalCost);
-        return Results.Ok(new { totalMonthlyCost = totalCost });
+        return Results.Ok(new { totalDailyCost = totalCost });
     }
     catch (Exception ex)
     {

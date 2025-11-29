@@ -320,9 +320,9 @@ namespace ZooAssignment.Tests.BusinessLayer
             context.SaveChanges();
 
             // Act
-            var total = await service.GetTotalMonthlyCostAsync();
+            var total = await service.GetTotalDailyCostAsync();
             var individualCosts = await service.GetAllAnimalFeedingCostsAsync();
-            var expectedTotal = individualCosts.Sum(c => c.MonthlyCost);
+            var expectedTotal = individualCosts.Sum(c => c.DailyCost);
 
             // Assert
             Assert.Equal(expectedTotal, total);

@@ -64,10 +64,10 @@ namespace ZooAssignment.BusinessLayer.Services
             return CalculateFeedingCost(animal, price);
         }
 
-        public async Task<decimal> GetTotalMonthlyCostAsync()
+        public async Task<decimal> GetTotalDailyCostAsync()
         {
             var costs = await GetAllAnimalFeedingCostsAsync();
-            return costs.Sum(c => c.MonthlyCost);
+            return costs.Sum(c => c.DailyCost);
         }
 
         public async Task<List<AnimalDto>> GetAllAnimalsAsync()

@@ -6,7 +6,7 @@ namespace ZooAssignment.BusinessLayer.Services
     {
         Task<List<AnimalFeedingCostDto>> GetAllAnimalFeedingCostsAsync();
         Task<AnimalFeedingCostDto> GetAnimalFeedingCostByIdAsync(int animalId);
-        Task<decimal> GetTotalMonthlyCostAsync();
+        Task<decimal> GetTotalDailyCostAsync();
         Task<List<AnimalDto>> GetAllAnimalsAsync();
         Task<List<FoodPriceDto>> GetAllPricesAsync();
     }
