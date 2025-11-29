@@ -11,7 +11,7 @@ The Zoo Assignment API provides endpoints to retrieve and calculate animal feedi
 ### Get Total Monthly Cost
 **Endpoint:** `GET /api/zoo/getDailyCost`
 
-**Description:** Retrieves the total monthly feeding cost for all animals in the zoo, calculated based on daily food consumption.
+**Description:** Retrieves retrieves the daily total food consumption for all animals in the db.
 
 **Request:**
 ```
@@ -26,7 +26,7 @@ GET http://localhost:5000/api/zoo/getDailyCost
 ```
 
 **Response Details:**
-- `totalMonthlyCost`: The sum of all animals' daily feeding costs multiplied by 30 days (monthly total)
+- `totalDailyCost`: The sum of all animals' daily feeding costs
 
 **Error Response (500 Internal Server Error):**
 The endpoint returns a 500 status code if an error occurs during processing.
