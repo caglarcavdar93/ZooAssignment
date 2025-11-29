@@ -1,0 +1,6 @@
+@ZooAssignment.Api_HostAddress = https://localhost:7259
+
+GET {{ZooAssignment.Api_HostAddress}}/api/zoo/getDailyCost
+Accept: application/json
+
+###
