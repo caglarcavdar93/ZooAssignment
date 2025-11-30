@@ -21,12 +21,18 @@ namespace ZooAssignment.DataAccessLayer.FileReaders
                 if (parts.Length < 3)
                     continue;
 
+                var meatToFoodRatio = 0m;
+                if (parts.Length > 3 && !string.IsNullOrWhiteSpace(parts[3].Trim()))
+                {
+                    meatToFoodRatio = decimal.Parse(parts[3].Trim().TrimEnd('%'), System.Globalization.CultureInfo.InvariantCulture) / 100m;
+                }
+
                 var animal = new AnimalType
                 {
                     TypeName = parts[0].Trim(),
                     FoodToWeightRatio = decimal.Parse(parts[1].Trim(), System.Globalization.CultureInfo.InvariantCulture),
                     FoodType = parts[2].Trim(),
-                    MeatToFoodRatio = parts.Length > 3 ? decimal.Parse(parts[3].Trim().TrimEnd('%'), System.Globalization.CultureInfo.InvariantCulture) / 100m : 0m
+                    MeatToFoodRatio = meatToFoodRatio
                 };
 
                 animals.Add(animal);
