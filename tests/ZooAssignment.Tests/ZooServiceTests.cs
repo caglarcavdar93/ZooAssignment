@@ -351,7 +351,7 @@ namespace ZooAssignment.Tests.BusinessLayer
             var cost = await service.GetAnimalFeedingCostByIdAsync(1);
 
             // Assert
-            Assert.Equal("Meat and Fruit", cost.FoodType);
+            Assert.Equal("Both", cost.FoodType);
         }
 
         [Fact]
